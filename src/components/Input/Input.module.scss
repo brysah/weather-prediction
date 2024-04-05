@@ -1,0 +1,16 @@
+.wrapper{
+    width: 500px; 
+    display: flex;
+    background-color: white;
+    align-items: center; 
+    padding: 1em;
+    margin: 0 auto 64px; 
+    &__input{
+        width: 100%;
+        border: none;
+    }
+    &__icon{
+        font-size: 15px;
+        cursor: pointer;
+    } 
+}

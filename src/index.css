@@ -11,6 +11,8 @@ body{
    display: flex;
    align-items: center;
    justify-content: center;
+   background: rgb(218, 199, 19);
+    background: linear-gradient(0deg, rgba(218, 199, 19, 1) 0%, rgba(240, 134, 41, 0.9808298319327731) 100%);
 }
 
 body,input,button,textarea{
