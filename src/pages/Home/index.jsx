@@ -45,7 +45,8 @@ export function Home() {
                         params: {
                             q: `${city},br`,
                             appid: 'f0b293bc2f014694931405528c7fb5a2',
-                            lang:'pt_br'
+                            lang:'pt_br',
+                            units:'metric'
                         }
                     })
                 )
@@ -70,9 +71,15 @@ export function Home() {
                 <h1 className={`${styles.container__title} ${styles['container__title--medium']}`}>Capitais</h1>
                 <div className={styles.container__cities}>
                     {
+                        
                         capitals && (
                             capitals.map((city,index)=>(
-                                <City name={city.name} key={index}/>
+                                <City 
+                                name={city.name} 
+                                key={index} 
+                                min={Math.round(city.main.temp_max)}
+                                max={Math.round(city.main.temp_min)}
+                                />
                             ))
                         )
                     }
