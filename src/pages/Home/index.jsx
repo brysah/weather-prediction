@@ -11,33 +11,16 @@ export function Home() {
     useEffect(() => {
         const fetchCapitalsData = async () => {
             const brazilianCapitals = [
-                "Rio Branco",
-                "Maceió",
-                "Macapá",
                 "Manaus",
                 "Salvador",
                 "Fortaleza",
-                "Brasília",
-                "Vitória",
-                "Goiânia",
-                "São Luís",
-                "Cuiabá",
-                "Campo Grande",
+                "Brasília", 
                 "Belo Horizonte",
                 "Belém",
                 "João Pessoa",
-                "Curitiba",
-                "Recife",
-                "Teresina",
-                "Rio de Janeiro",
-                "Natal",
-                "Porto Alegre",
-                "Porto Velho",
-                "Boa Vista",
-                "Florianópolis",
-                "São Paulo",
-                "Aracaju",
-                "Palmas"
+                "Curitiba", 
+                "Rio de Janeiro",   
+                "São Paulo", 
             ];
             try {
                 const promises = brazilianCapitals.map(city =>
