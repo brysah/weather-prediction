@@ -82,14 +82,5 @@ body {
             }
         }
     }
-    
-    &__day{
-        display: flex; 
-        flex-direction: column;
-        gap: 10px;
-    }
-    &__footer{
-        display: flex;
-        justify-content: space-between;
-    }
+     
 }

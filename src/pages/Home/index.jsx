@@ -58,8 +58,6 @@ export function Home() {
                     lang:'pt_br'
                 }
             }).then(response => response.data)
-
-            console.log(cityData);
             setData(cityData);
             setMessage('') 
         }

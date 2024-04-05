@@ -1,9 +1,11 @@
 import styles from './Details.module.scss'
 import { MdClose } from "react-icons/md";
 import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
+import { useState, useEffect } from 'react';
+import { api } from '../../services/api';
+import { Day } from '../Day';
 
-
-export function Details({ data }) {
+export function Details({ data }) { 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -27,13 +29,13 @@ export function Details({ data }) {
                         <div className={styles.details__item__wrapper}>
                             <IoMdArrowDown />
                             <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                            {Math.round(data.main.temp_min)}°C
+                                {Math.round(data.main.temp_min)}°C
                             </p>
                         </div>
                         <div className={styles.details__item__wrapper}>
                             <IoMdArrowUp />
                             <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                            {Math.round(data.main.temp_max)}°C
+                                {Math.round(data.main.temp_max)}°C
                             </p>
                         </div>
                     </div>
@@ -42,7 +44,7 @@ export function Details({ data }) {
                             Sensação
                         </p>
                         <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                        {Math.round(data.main.feels_like)}°C
+                            {Math.round(data.main.feels_like)}°C
                         </p>
                     </div>
                     <div className={styles.details__info__item}>
@@ -63,54 +65,7 @@ export function Details({ data }) {
                     </div>
                 </div>
             </div>
-            <div className={styles.details__line}></div>
-            <div className={styles.details__footer}>
-                <div className={styles.details__day}>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                        Terça
-                    </p>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}
-                     ${styles['details__text--orange']}`}>
-                        18°C 16°C
-                    </p>
-                </div>
-                <div className={styles.details__day}>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                        Quarta
-                    </p>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}
-                     ${styles['details__text--orange']}`}>
-                        18°C 16°C
-                    </p>
-                </div>
-                <div className={styles.details__day}>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                        Quinta
-                    </p>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}
-                     ${styles['details__text--orange']}`}>
-                        18°C 16°C
-                    </p>
-                </div>
-                <div className={styles.details__day}>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                        Sexta
-                    </p>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}
-                     ${styles['details__text--orange']}`}>
-                        18°C 16°C
-                    </p>
-                </div>
-                <div className={styles.details__day}>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                        Sabado
-                    </p>
-                    <p className={`${styles.details__text} ${styles['details__text--small']}
-                     ${styles['details__text--orange']}`}>
-                        18°C 16°C
-                    </p>
-                </div>
-            </div>
+            <div className={styles.details__line}></div> 
         </div>
     )
 }
