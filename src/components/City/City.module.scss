@@ -1,0 +1,22 @@
+.city {
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end; 
+    &__caption {
+        font-size: 16px;
+        margin-bottom: 16px;
+        font-weight: 200;
+    }
+
+    &__degree {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__name {
+        font-weight: bold;
+        font-size: 18px;
+    }
+}

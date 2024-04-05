@@ -1,5 +1,6 @@
 import styles from './Home.module.scss'
 import { Input } from '../../components/Input'
+import { City } from '../../components/City'
 
 export function Home(){
     return(
@@ -9,6 +10,9 @@ export function Home(){
             <div className={styles.container__line}></div>
             <div className={`${styles.container} ${styles['container--pd']}`}>
             <h1 className={`${styles.container__title} ${styles['container__title--medium']}`}>Capitais</h1>
+            <div className="cities">
+                <City/>
+            </div>
             </div>
         </div>
     )
