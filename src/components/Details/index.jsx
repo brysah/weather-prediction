@@ -61,8 +61,7 @@ export function Details({ data }) {
                         </p>
                     </div>
                 </div>
-            </div>
-            <div className={styles.details__line}></div> 
+            </div> 
         </div>
     )
 }
