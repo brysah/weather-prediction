@@ -1,6 +1,6 @@
 import styles from './City.module.scss'
 
-export function City(){
+export function City({name}){
     return(
         <div className={styles.city}>
             <div className={styles.city__temperature}>
@@ -11,7 +11,7 @@ export function City(){
              <div className={styles.city__caption}>Max</div>
              <div className={styles.city__degree}>23°C</div>
             </div>
-            <p className={styles.city__name}>Rio de Janeiro</p>
+            <p className={styles.city__name}>{name}</p>
         </div>
     )
 }

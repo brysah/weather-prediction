@@ -1,4 +1,6 @@
 .container {
+    max-width: 600px;
+    width: 100%;
     &__title {
         color: white;
         font-weight: bold;
@@ -19,5 +21,10 @@
     }
     &--pd{
         padding: 24px;
+    }
+    &__cities{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
     }
 }
