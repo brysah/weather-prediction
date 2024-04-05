@@ -1,9 +1,6 @@
 import styles from './Details.module.scss'
 import { MdClose } from "react-icons/md";
-import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
-import { useState, useEffect } from 'react';
-import { api } from '../../services/api';
-import { Day } from '../Day';
+import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io"; 
 
 export function Details({ data }) { 
     function capitalizeFirstLetter(string) {
