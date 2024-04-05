@@ -54,12 +54,14 @@ export function Home() {
                 params: {
                     q: `${city}`,
                     appid: 'f0b293bc2f014694931405528c7fb5a2',
-                    units: 'metric'
+                    units: 'metric',
+                    lang:'pt_br'
                 }
             }).then(response => response.data)
 
+            console.log(cityData);
             setData(cityData);
-            setMessage('')
+            setMessage('') 
         }
         catch (error) {
             if (error.response.status === 404) {
@@ -85,7 +87,8 @@ export function Home() {
                     </h2>)
             }
             {
-                data && ( <Details/> )
+                data && (
+                    <Details data={data} />)
             }
             <Input handleSubmit={handleSubmit} handleInput={handleInput} />
             <div className={styles.container__line}></div>

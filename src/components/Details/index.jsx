@@ -3,12 +3,16 @@ import { MdClose } from "react-icons/md";
 import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
 
 
-export function Details() {
+export function Details({ data }) {
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     return (
         <div className={styles.details}>
             <div className={styles.details__header}>
                 <p className={`${styles.details__text} ${styles['details__text--medium']}`}>
-                    Niteroi,RJ - Brasil
+                    {data.name} - {data.sys.country}
                 </p>
                 <button className={styles.details__btn} >
                     <MdClose />
@@ -16,20 +20,20 @@ export function Details() {
             </div>
             <div className={styles.details__content}>
                 <p className={`${styles.details__text} ${styles['details__text--big']}`}>
-                    28°C Nublado
+                    {Math.round(data.main.temp)}°C {capitalizeFirstLetter(data.weather[0].description)}
                 </p>
                 <div className={styles.details__info}>
                     <div className={styles.details__info__item}>
                         <div className={styles.details__item__wrapper}>
                             <IoMdArrowDown />
                             <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                                16°C
+                            {Math.round(data.main.temp_min)}°C
                             </p>
                         </div>
                         <div className={styles.details__item__wrapper}>
                             <IoMdArrowUp />
                             <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                                18°C
+                            {Math.round(data.main.temp_max)}°C
                             </p>
                         </div>
                     </div>
@@ -38,7 +42,7 @@ export function Details() {
                             Sensação
                         </p>
                         <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                            16°C
+                        {Math.round(data.main.feels_like)}°C
                         </p>
                     </div>
                     <div className={styles.details__info__item}>
@@ -46,7 +50,7 @@ export function Details() {
                             Vento
                         </p>
                         <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                            18km/h
+                            {data.wind.speed}m/s
                         </p>
                     </div>
                     <div className={styles.details__info__item}>
@@ -54,7 +58,7 @@ export function Details() {
                             Humidade
                         </p>
                         <p className={`${styles.details__text} ${styles['details__text--small']}`}>
-                            89%
+                            {data.main.humidity}%
                         </p>
                     </div>
                 </div>
@@ -69,7 +73,7 @@ export function Details() {
                      ${styles['details__text--orange']}`}>
                         18°C 16°C
                     </p>
-                </div> 
+                </div>
                 <div className={styles.details__day}>
                     <p className={`${styles.details__text} ${styles['details__text--small']}`}>
                         Quarta
