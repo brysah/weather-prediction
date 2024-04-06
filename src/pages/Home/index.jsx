@@ -55,11 +55,19 @@ export function Home() {
                     q: `${city}`,
                     appid: 'f0b293bc2f014694931405528c7fb5a2',
                     units: 'metric',
-                    lang:'pt_br'
+                    lang: 'pt_br'
                 }
             }).then(response => response.data)
             setData(cityData);
-            setMessage('') 
+            setMessage('')
+            if (window.screen.width <= 520) {
+
+                document.querySelector(`.${styles.container__title}`)
+                    .classList.remove(styles['container__title--big']);
+                document.querySelector(`.${styles.container__title}`)
+                    .classList.add(styles['container__title--mobile']);
+            }
+
         }
         catch (error) {
             if (error.response.status === 404) {
@@ -73,7 +81,13 @@ export function Home() {
         setCity(e.target.value);
     }
 
-    function handleCloseCard(){
+    function handleCloseCard() {
+        if (window.screen.width <= 520) {
+            document.querySelector(`.${styles.container__title}`)
+                .classList.add(styles['container__title--big']);
+            document.querySelector(`.${styles.container__title}`)
+                .classList.remove(styles['container__title--mobile']);
+        }
         setData('');
     }
 
@@ -90,7 +104,7 @@ export function Home() {
             }
             {
                 data && (
-                    <Details data={data} handleCloseCard={handleCloseCard}/>)
+                    <Details data={data} handleCloseCard={handleCloseCard} />)
             }
             <Input handleSubmit={handleSubmit} handleInput={handleInput} />
             <div className={styles.container__line}></div>

@@ -1,7 +1,3 @@
-body {
-    height: auto !important;
-}
-
 .details {
     width: 500px;
     background-color: white;
@@ -15,7 +11,7 @@ body {
         margin-bottom: 24px;
     }
 
-    &__content{
+    &__content {
         margin-bottom: 24px;
     }
 
@@ -35,10 +31,12 @@ body {
         &--medium {
             font-size: 24px;
         }
+
         &--light {
             font-weight: 300;
         }
-        &--orange{
+
+        &--orange {
             color: orange;
             font-weight: bold;
             font-size: 14px;
@@ -57,30 +55,53 @@ body {
         }
 
         &:hover {
-            svg { 
-                color: black; 
+            svg {
+                color: black;
             }
         }
     }
 
-    &__info{
+    &__info {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
-        &__item{
-            display: flex;  
+
+        &__item {
+            display: flex;
             gap: 10px;
         }
     }
-    &__item{ 
-        &__wrapper{
+
+    &__item {
+        &__wrapper {
             display: flex;
             gap: 5px;
-            svg{
+
+            svg {
                 color: orange;
                 font-weight: bold;
             }
         }
     }
-     
+
+    @media (max-width: 520px) {
+        max-width: 500px;
+        width: 100%;
+
+        &__text { 
+
+            &--big {
+                font-size: 36px;
+            }
+
+            &--small {
+                font-size: 14px;
+            }
+
+            &--medium {
+                font-size: 18px;
+            }
+        }
+    }
+
 }
