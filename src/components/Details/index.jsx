@@ -2,10 +2,10 @@ import styles from './Details.module.scss'
 import { MdClose } from "react-icons/md";
 import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io"; 
 
-export function Details({ data }) { 
+export function Details({ data,handleCloseCard }) { 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+    } 
 
     return (
         <div className={styles.details}>
@@ -14,7 +14,7 @@ export function Details({ data }) {
                     {data.name} - {data.sys.country}
                 </p>
                 <button className={styles.details__btn} >
-                    <MdClose />
+                    <MdClose onClick={handleCloseCard}/>
                 </button>
             </div>
             <div className={styles.details__content}>

@@ -3,10 +3,11 @@
     width: 100%;
     &__title {
         color: white;
-        font-weight: bold;
+        font-weight: bold; 
         &--big {
             font-size: 60px;
             margin-bottom: 64px;
+            text-align: center;
         }
         &--medium {
             font-size: 32px;

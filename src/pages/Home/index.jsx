@@ -73,6 +73,10 @@ export function Home() {
         setCity(e.target.value);
     }
 
+    function handleCloseCard(){
+        setData('');
+    }
+
     return (
         <div className={styles.container} >
             <h1 className={`${styles.container__title} ${styles['container__title--big']}`}>Previsão do tempo</h1>
@@ -86,7 +90,7 @@ export function Home() {
             }
             {
                 data && (
-                    <Details data={data} />)
+                    <Details data={data} handleCloseCard={handleCloseCard}/>)
             }
             <Input handleSubmit={handleSubmit} handleInput={handleInput} />
             <div className={styles.container__line}></div>
