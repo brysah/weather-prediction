@@ -14,8 +14,7 @@ This project is my solution to the [1STi Front End Challenge](https://github.com
 
 To run this application locally, follow these steps:
 
-1.  Clone the repository to your local machine.
-2.  Navigate to the project directory `cd weather-prediction`.
+1.  Clone the repository to your local machine. 
 3.  Install dependencies by running `npm install`.
 4.  Start the development server with `npm run dev`.
 5.  Access the application in your web browser .
